@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/bin/bash
+source "$TM_SUPPORT_PATH/lib/bash_init.sh" # might not be necessary
+        . "$TM_BUNDLE_SUPPORT/environment.sh"
+        if [ ! -e "$CONFIG_FILE" ]; then
+            cat "$TM_BUNDLE_SUPPORT/templates/config.sh" &gt; "$CONFIG_FILE"
+        fi
+        mate -a "$CONFIG_FILE"</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>name</key>
+	<string>Configure</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>uuid</key>
+	<string>D5FD4570-AE3D-41E5-848A-1CE6BB258512</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
